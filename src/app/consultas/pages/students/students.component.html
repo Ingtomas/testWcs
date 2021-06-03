@@ -1,0 +1,13 @@
+<h2>Lista de estudiantes</h2>
+<hr />
+
+<mat-spinner
+  *ngIf="showSpinner"
+  style="position: relative; margin-left: 45%; margin-top: 30%"
+></mat-spinner>
+
+<div *ngIf="!showSpinner" class="row">
+  <div class="col">
+    <app-table [personajes]="personajes"></app-table>
+  </div>
+</div>

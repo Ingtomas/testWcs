@@ -1,0 +1,31 @@
+<h2>
+  Por la casa: <small>{{ casaActiva | titlecase }}</small>
+</h2>
+<hr />
+
+<h5>Seleccione la casa</h5>
+<br />
+<div class="row">
+  <div class="col">
+    <button
+      *ngFor="let casa of casas"
+      [class]="getClassCss(casa)"
+      (click)="activarCasa(casa)"
+      (click)="loadSpinner()"
+    >
+      {{ casa | titlecase }}
+    </button>
+  </div>
+</div>
+
+<hr />
+<mat-spinner
+  *ngIf="showSpinner"
+  style="position: relative; margin-left: 45%; margin-top: 30%"
+></mat-spinner>
+
+<div *ngIf="!showSpinner" class="row">
+  <div class="col">
+    <app-table [personajes]="personajes"></app-table>
+  </div>
+</div>

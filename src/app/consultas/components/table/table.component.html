@@ -1,0 +1,22 @@
+<table *ngIf="personajes.length > 0" class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Patronus</th>
+      <th>Edad</th>
+      <th>Foto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let personaje of personajes; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>
+        {{ personaje.name }}
+      </td>
+      <td>{{ personaje.patronus | titlecase }}</td>
+      <td></td>
+      <td><img class="small-flag" [src]="personaje.image" /></td>
+    </tr>
+  </tbody>
+</table>
