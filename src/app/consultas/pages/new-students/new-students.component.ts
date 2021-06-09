@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-students',
@@ -6,18 +7,39 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class NewStudentsComponent {
-  // los datos se van guardando en un arreglo, el cual se usa para
-  // desplegar la tabla
-  personas: any[] = [];
+  estudiante: [] = [];
+  miFormulario: FormGroup = this.fb.group({
+    nombre: [, [Validators.required, Validators.minLength(3)]],
+    patronus: [, [Validators.required, Validators.minLength(3)]],
+    edad: [, [Validators.required, Validators.min(0)]],
+  });
 
-  // los input del formulario se asocian con un modelo
-  persona: any = {};
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.miFormulario.reset({
+      nombre: '',
+    });
+
+    if (localStorage.getItem('estudiante')) {
+      this.estudiante = JSON.parse(localStorage.getItem('historial')!);
+    }
+  }
+
+  campoEsValido(campo: string) {
+    return (
+      this.miFormulario.controls[campo].errors &&
+      this.miFormulario.controls[campo].touched
+    );
+  }
 
   guardar() {
-    // se inserta el dato en el arreglo
-    this.personas.push(this.persona);
-
-    // se crea un nuevo objeto para almacenar nuevos datos
-    this.persona = {};
+    if (this.miFormulario.invalid) {
+      this.miFormulario.markAllAsTouched();
+      return;
+    }
+    this.estudiante = this.miFormulario.value;
+    this.miFormulario.reset();
+    localStorage.setItem('estudiante', JSON.stringify(this.estudiante));
   }
 }

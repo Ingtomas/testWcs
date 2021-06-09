@@ -5,7 +5,10 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @NgModule({
   declarations: [SidebarComponent],
   exports: [
@@ -14,7 +17,9 @@ import { MatInputModule } from '@angular/material/input';
     MatProgressSpinnerModule,
     MatButtonModule,
     FormsModule,
-    MatInputModule,
+    MatTableModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   imports: [CommonModule, AppRoutingModule],
 })
