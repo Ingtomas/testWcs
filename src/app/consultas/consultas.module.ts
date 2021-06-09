@@ -7,6 +7,7 @@ import { StaffComponent } from './pages/staff/staff.component';
 import { StudentsComponent } from './pages/students/students.component';
 import { TableComponent } from './components/table/table.component';
 import { SharedModule } from '../shared/shared.module';
+import { ObjToArrayPipe } from './pipes/objetToArray.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
     StaffComponent,
     TableComponent,
     NewStudentsComponent,
+    ObjToArrayPipe,
   ],
-  imports: [CommonModule, SharedModule,],
+  imports: [CommonModule, SharedModule],
 })
 export class ConsultasModule {}

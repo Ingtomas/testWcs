@@ -20,10 +20,6 @@ export class NewStudentsComponent {
     this.miFormulario.reset({
       nombre: '',
     });
-
-    if (localStorage.getItem('estudiante')) {
-      this.estudiante = JSON.parse(localStorage.getItem('historial')!);
-    }
   }
 
   campoEsValido(campo: string) {
@@ -39,7 +35,7 @@ export class NewStudentsComponent {
       return;
     }
     this.estudiante = this.miFormulario.value;
+    console.log(this.estudiante);
     this.miFormulario.reset();
-    localStorage.setItem('estudiante', JSON.stringify(this.estudiante));
   }
 }

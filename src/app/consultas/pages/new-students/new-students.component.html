@@ -1,6 +1,7 @@
 <h2>Registro de estudiantes</h2>
 <hr />
 
+
 <div class="row">
   <div class="col">
     <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="miFormulario">
@@ -62,12 +63,33 @@
       </div>
     </form>
   </div>
-
-  <div class="row">
-    <div class="col">
-      <ul *ngFor="let item of estudiante">
-        <li>{{ item.formGroup.nombre }}</li>
-      </ul>
-    </div>
-  </div>
 </div>
+
+<!--nombre: <input type="text" name="nombre" [(ngModel)]="persona.nombre" /><br />
+Patronus:
+<input type="text" name="patronus" [(ngModel)]="persona.patronus" /><br />
+Edad:
+<input type="text" name="edad" [(ngModel)]="persona.edad" /><br />
+<br />
+<input type="button" value="guardar" (click)="guardar()" />
+
+<table *ngIf="personas.length > 0" class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Patronus</th>
+      <th>Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personas; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>
+        {{ persona.nombre | titlecase }}
+      </td>
+      <td>{{ persona.patronus }}</td>
+      <td>{{ persona.edad }} años</td>
+    </tr>
+  </tbody>
+</table>-->

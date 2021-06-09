@@ -15,7 +15,7 @@
         {{ personaje.name }}
       </td>
       <td>{{ personaje.patronus | titlecase }}</td>
-      <td></td>
+      <td>{{ personaje.dateOfBirth }}</td>
       <td><img class="small-flag" [src]="personaje.image" /></td>
     </tr>
   </tbody>
