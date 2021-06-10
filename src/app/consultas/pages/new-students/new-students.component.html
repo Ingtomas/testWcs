@@ -1,7 +1,6 @@
 <h2>Registro de estudiantes</h2>
 <hr />
 
-
 <div class="row">
   <div class="col">
     <form (ngSubmit)="guardar()" autocomplete="off" [formGroup]="miFormulario">
@@ -39,17 +38,35 @@
 
       <!-- Campo de existencias -->
       <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label"><b>Edad:</b></label>
+        <label class="col-sm-3 col-form-label"
+          ><b>Fecha de nacimiento:</b></label
+        >
         <div class="col-sm-9">
           <input
-            type="number"
+            type="date"
             class="form-control"
             formControlName="edad"
-            placeholder="Edad del estudiante"
+            placeholder="Fecha de nacimiento del estudiante"
           />
 
           <span class="form-text text-danger" *ngIf="campoEsValido('edad')">
             La edad del estudiante debe ser mayor a 0
+          </span>
+        </div>
+      </div>
+
+      <!-- Campo de existencias -->
+      <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label"><b>Foto:</b></label>
+        <div class="col-sm-9">
+          <input
+            type="file"
+            class="form-control"
+            formControlName="foto"
+            placeholder="Foto del estudiante"
+          />
+          <span class="form-text text-danger" *ngIf="campoEsValido('foto')">
+            Seleccione una foto del estudiante
           </span>
         </div>
       </div>
@@ -64,32 +81,19 @@
     </form>
   </div>
 </div>
-
-<!--nombre: <input type="text" name="nombre" [(ngModel)]="persona.nombre" /><br />
-Patronus:
-<input type="text" name="patronus" [(ngModel)]="persona.patronus" /><br />
-Edad:
-<input type="text" name="edad" [(ngModel)]="persona.edad" /><br />
 <br />
-<input type="button" value="guardar" (click)="guardar()" />
 
-<table *ngIf="personas.length > 0" class="table table-hover">
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>#</th>
-      <th>Nombre</th>
-      <th>Patronus</th>
-      <th>Edad</th>
+      <th>Nuevo Estudiante</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let persona of personas; let i = index">
-      <td>{{ i + 1 }}</td>
+    <tr *ngFor="let item of estudiante | ObjToArray">
       <td>
-        {{ persona.nombre | titlecase }}
+        {{ item }}
       </td>
-      <td>{{ persona.patronus }}</td>
-      <td>{{ persona.edad }} años</td>
     </tr>
   </tbody>
-</table>-->
+</table>

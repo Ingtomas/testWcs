@@ -6,6 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { ConsultasModule } from './consultas/consultas.module';
 import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,8 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     SharedModule,
     ConsultasModule,
-    MatInputModule
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

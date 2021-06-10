@@ -4,7 +4,29 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-new-students',
   templateUrl: './new-students.component.html',
-  styles: [],
+  styles: [
+    `
+      table {
+        font-size: larger;
+        font-family: cursive;
+        font-weight: bolder;
+        color: white;
+        background-color: black;
+        opacity: 80%;
+        border-radius: 15px;
+      }
+    `,
+    `
+      tbody,
+      td,
+      tfoot,
+      th,
+      thead,
+      tr {
+        cursor: pointer;
+      }
+    `,
+  ],
 })
 export class NewStudentsComponent {
   estudiante: [] = [];
@@ -12,6 +34,7 @@ export class NewStudentsComponent {
     nombre: [, [Validators.required, Validators.minLength(3)]],
     patronus: [, [Validators.required, Validators.minLength(3)]],
     edad: [, [Validators.required, Validators.min(0)]],
+    foto: [, [Validators.required, Validators.min(0)]],
   });
 
   constructor(private fb: FormBuilder) {}

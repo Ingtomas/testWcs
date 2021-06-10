@@ -1,0 +1,17 @@
+table {
+  font-size: larger;
+  font-family: cursive;
+  font-weight: bolder;
+  color: white;
+  background-color: black;
+  opacity: 80%;
+  border-radius: 25px;
+}
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  cursor: pointer;
+}
