@@ -8,12 +8,7 @@
       <div class="mb-3 row">
         <label class="col-sm-3 col-form-label"><b>Nombre:</b></label>
         <div class="col-sm-9">
-          <input
-            type="text"
-            class="form-control"
-            formControlName="nombre"
-            placeholder="Nombre del estudiante"
-          />
+          <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre del estudiante" />
           <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
             Debe de ser de 3 letras
           </span>
@@ -24,12 +19,7 @@
       <div class="mb-3 row">
         <label class="col-sm-3 col-form-label"><b>Patronus:</b></label>
         <div class="col-sm-9">
-          <input
-            type="text"
-            class="form-control"
-            formControlName="patronus"
-            placeholder="Patronus del estudiante"
-          />
+          <input type="text" class="form-control" formControlName="patronus" placeholder="Patronus del estudiante" />
           <span class="form-text text-danger" *ngIf="campoEsValido('patronus')">
             Debe ser de 3 letras
           </span>
@@ -38,16 +28,10 @@
 
       <!-- Campo de existencias -->
       <div class="mb-3 row">
-        <label class="col-sm-3 col-form-label"
-          ><b>Fecha de nacimiento:</b></label
-        >
+        <label class="col-sm-3 col-form-label"><b>Fecha de nacimiento:</b></label>
         <div class="col-sm-9">
-          <input
-            type="date"
-            class="form-control"
-            formControlName="edad"
-            placeholder="Fecha de nacimiento del estudiante"
-          />
+          <input type="date" class="form-control" formControlName="edad"
+            placeholder="Fecha de nacimiento del estudiante" />
 
           <span class="form-text text-danger" *ngIf="campoEsValido('edad')">
             La edad del estudiante debe ser mayor a 0
@@ -59,12 +43,7 @@
       <div class="mb-3 row">
         <label class="col-sm-3 col-form-label"><b>Foto:</b></label>
         <div class="col-sm-9">
-          <input
-            type="file"
-            class="form-control"
-            formControlName="foto"
-            placeholder="Foto del estudiante"
-          />
+          <input type="file" class="form-control" formControlName="foto" placeholder="Foto del estudiante" />
           <span class="form-text text-danger" *ngIf="campoEsValido('foto')">
             Seleccione una foto del estudiante
           </span>
